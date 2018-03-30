@@ -100,13 +100,14 @@ namespace pocorall.SCM_Notifier
         private Label label24;
         private Button button_BrowseGit;
         private Button button_BrowseTortoiseGit;
+		private CheckBox checkBox_DoRealFetch;
 
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
 		private System.ComponentModel.Container components = null;
 
-		
+
 		/// <summary>
 		/// Clean up any resources being used.
 		/// </summary>
@@ -208,6 +209,7 @@ namespace pocorall.SCM_Notifier
             this.numericUpDown_DefaultActiveStatusUpdateIntervalSec = new System.Windows.Forms.NumericUpDown();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label15 = new System.Windows.Forms.Label();
+            this.checkBox_DoRealFetch = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_ShowBalloonInterval)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -228,45 +230,45 @@ namespace pocorall.SCM_Notifier
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_DefaultActiveStatusUpdateIntervalSec)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.SuspendLayout();
-            // 
+            //
             // label1
-            // 
+            //
             this.label1.Location = new System.Drawing.Point(8, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(136, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Path to svn.exe:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
+            //
             // label2
-            // 
+            //
             this.label2.Location = new System.Drawing.Point(8, 64);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(200, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "Path to TortoiseProc.exe of TortoiseSVN:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
+            //
             // textBox_SVNpath
-            // 
+            //
             this.textBox_SVNpath.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_SVNpath.Location = new System.Drawing.Point(8, 32);
             this.textBox_SVNpath.Name = "textBox_SVNpath";
             this.textBox_SVNpath.Size = new System.Drawing.Size(318, 20);
             this.textBox_SVNpath.TabIndex = 1;
             this.textBox_SVNpath.TextChanged += new System.EventHandler(this.CheckPathes);
-            // 
+            //
             // textBox_TortoiseSVNpath
-            // 
+            //
             this.textBox_TortoiseSVNpath.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_TortoiseSVNpath.Location = new System.Drawing.Point(8, 80);
             this.textBox_TortoiseSVNpath.Name = "textBox_TortoiseSVNpath";
             this.textBox_TortoiseSVNpath.Size = new System.Drawing.Size(318, 20);
             this.textBox_TortoiseSVNpath.TabIndex = 3;
             this.textBox_TortoiseSVNpath.TextChanged += new System.EventHandler(this.CheckPathes);
-            // 
+            //
             // button_OK
-            // 
+            //
             this.button_OK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button_OK.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.button_OK.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -276,9 +278,9 @@ namespace pocorall.SCM_Notifier
             this.button_OK.TabIndex = 7;
             this.button_OK.Text = "&OK";
             this.button_OK.Click += new System.EventHandler(this.button_OK_Click);
-            // 
+            //
             // button_Cancel
-            // 
+            //
             this.button_Cancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button_Cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button_Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -287,9 +289,9 @@ namespace pocorall.SCM_Notifier
             this.button_Cancel.Size = new System.Drawing.Size(71, 23);
             this.button_Cancel.TabIndex = 8;
             this.button_Cancel.Text = "Cancel";
-            // 
+            //
             // button_BrowseSvn
-            // 
+            //
             this.button_BrowseSvn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_BrowseSvn.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_BrowseSvn.Location = new System.Drawing.Point(328, 32);
@@ -298,9 +300,9 @@ namespace pocorall.SCM_Notifier
             this.button_BrowseSvn.TabIndex = 2;
             this.button_BrowseSvn.Text = "...";
             this.button_BrowseSvn.Click += new System.EventHandler(this.button_BrowseSvn_Click);
-            // 
+            //
             // button_BrowseTortoise
-            // 
+            //
             this.button_BrowseTortoise.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_BrowseTortoise.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_BrowseTortoise.Location = new System.Drawing.Point(328, 80);
@@ -309,29 +311,29 @@ namespace pocorall.SCM_Notifier
             this.button_BrowseTortoise.TabIndex = 4;
             this.button_BrowseTortoise.Text = "...";
             this.button_BrowseTortoise.Click += new System.EventHandler(this.button_BrowseTortoise_Click);
-            // 
+            //
             // openFileDialog_svn
-            // 
+            //
             this.openFileDialog_svn.DefaultExt = "exe";
             this.openFileDialog_svn.Filter = "svn.exe|svn.exe";
-            // 
+            //
             // openFileDialog_Tortoise
-            // 
+            //
             this.openFileDialog_Tortoise.DefaultExt = "exe";
             this.openFileDialog_Tortoise.Filter = "TortoiseProc.exe|TortoiseProc.exe";
-            // 
+            //
             // openFileDialog_git
-            // 
+            //
             this.openFileDialog_git.DefaultExt = "exe";
             this.openFileDialog_git.Filter = "git.exe|git.exe";
-            // 
+            //
             // openFileDialog_TortoiseGit
-            // 
+            //
             this.openFileDialog_TortoiseGit.DefaultExt = "exe";
             this.openFileDialog_TortoiseGit.Filter = "TortoiseGitProc.exe|TortoiseGitProc.exe|GitExtensions.exe|GitExtensions.exe";
-            // 
+            //
             // comboBox_ItemActions
-            // 
+            //
             this.comboBox_ItemActions.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_ItemActions.Items.AddRange(new object[] {
             "Open folder",
@@ -343,35 +345,35 @@ namespace pocorall.SCM_Notifier
             this.comboBox_ItemActions.Name = "comboBox_ItemActions";
             this.comboBox_ItemActions.Size = new System.Drawing.Size(136, 21);
             this.comboBox_ItemActions.TabIndex = 6;
-            // 
+            //
             // label7
-            // 
+            //
             this.label7.Location = new System.Drawing.Point(16, 216);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(88, 17);
             this.label7.TabIndex = 14;
             this.label7.Text = "On double click:";
-            // 
+            //
             // checkBox_HideOnStartup
-            // 
+            //
             this.checkBox_HideOnStartup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkBox_HideOnStartup.Location = new System.Drawing.Point(16, 265);
             this.checkBox_HideOnStartup.Name = "checkBox_HideOnStartup";
             this.checkBox_HideOnStartup.Size = new System.Drawing.Size(216, 15);
             this.checkBox_HideOnStartup.TabIndex = 15;
             this.checkBox_HideOnStartup.Text = "Hide program to system tray on startup";
-            // 
+            //
             // checkBox_CheckForNewVersion
-            // 
+            //
             this.checkBox_CheckForNewVersion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkBox_CheckForNewVersion.Location = new System.Drawing.Point(16, 309);
             this.checkBox_CheckForNewVersion.Name = "checkBox_CheckForNewVersion";
             this.checkBox_CheckForNewVersion.Size = new System.Drawing.Size(144, 16);
             this.checkBox_CheckForNewVersion.TabIndex = 16;
             this.checkBox_CheckForNewVersion.Text = "Check for new version";
-            // 
+            //
             // numericUpDown_ShowBalloonInterval
-            // 
+            //
             this.numericUpDown_ShowBalloonInterval.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.numericUpDown_ShowBalloonInterval.Location = new System.Drawing.Point(168, 239);
             this.numericUpDown_ShowBalloonInterval.Maximum = new decimal(new int[] {
@@ -393,17 +395,17 @@ namespace pocorall.SCM_Notifier
             0,
             0,
             0});
-            // 
+            //
             // label10
-            // 
+            //
             this.label10.Location = new System.Drawing.Point(16, 240);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(256, 17);
             this.label10.TabIndex = 18;
             this.label10.Text = "Hide system tray balloon after                 seconds";
-            // 
+            //
             // checkBox_ChangeLogBeforeUpdate
-            // 
+            //
             this.checkBox_ChangeLogBeforeUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkBox_ChangeLogBeforeUpdate.Location = new System.Drawing.Point(16, 72);
             this.checkBox_ChangeLogBeforeUpdate.Name = "checkBox_ChangeLogBeforeUpdate";
@@ -411,26 +413,26 @@ namespace pocorall.SCM_Notifier
             this.checkBox_ChangeLogBeforeUpdate.TabIndex = 19;
             this.checkBox_ChangeLogBeforeUpdate.Text = "Force to see \"Change Log\" before Update";
             this.checkBox_ChangeLogBeforeUpdate.CheckedChanged += new System.EventHandler(this.checkBox_ChangeLogBeforeUpdate_CheckedChanged);
-            // 
+            //
             // checkBox_UpdateAllSilently
-            // 
+            //
             this.checkBox_UpdateAllSilently.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkBox_UpdateAllSilently.Location = new System.Drawing.Point(16, 112);
             this.checkBox_UpdateAllSilently.Name = "checkBox_UpdateAllSilently";
             this.checkBox_UpdateAllSilently.Size = new System.Drawing.Size(136, 24);
             this.checkBox_UpdateAllSilently.TabIndex = 22;
             this.checkBox_UpdateAllSilently.Text = "\"Silent\" Update All";
-            // 
+            //
             // label14
-            // 
+            //
             this.label14.Location = new System.Drawing.Point(8, 16);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(208, 16);
             this.label14.TabIndex = 25;
             this.label14.Text = "TortoiseSVN dialog acton after update:";
-            // 
+            //
             // comboBox_UpdateWindowAction
-            // 
+            //
             this.comboBox_UpdateWindowAction.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_UpdateWindowAction.Items.AddRange(new object[] {
             "don\'t close the dialog automatically",
@@ -442,11 +444,11 @@ namespace pocorall.SCM_Notifier
             this.comboBox_UpdateWindowAction.Name = "comboBox_UpdateWindowAction";
             this.comboBox_UpdateWindowAction.Size = new System.Drawing.Size(328, 21);
             this.comboBox_UpdateWindowAction.TabIndex = 27;
-            // 
+            //
             // tabControl1
-            // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            //
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage3);
@@ -457,10 +459,11 @@ namespace pocorall.SCM_Notifier
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(552, 403);
             this.tabControl1.TabIndex = 28;
-            // 
+            //
             // tabPage1
-            // 
+            //
             this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage1.Controls.Add(this.checkBox_DoRealFetch);
             this.tabPage1.Controls.Add(this.textBox_TortoiseGitPath);
             this.tabPage1.Controls.Add(this.textBox_GitPath);
             this.tabPage1.Controls.Add(this.label23);
@@ -486,45 +489,45 @@ namespace pocorall.SCM_Notifier
             this.tabPage1.Size = new System.Drawing.Size(544, 377);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "General";
-            // 
+            //
             // textBox_TortoiseGitPath
-            // 
+            //
             this.textBox_TortoiseGitPath.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_TortoiseGitPath.Location = new System.Drawing.Point(7, 175);
             this.textBox_TortoiseGitPath.Name = "textBox_TortoiseGitPath";
             this.textBox_TortoiseGitPath.Size = new System.Drawing.Size(317, 20);
             this.textBox_TortoiseGitPath.TabIndex = 25;
             this.textBox_TortoiseGitPath.TextChanged += new System.EventHandler(this.CheckPathes);
-            // 
+            //
             // textBox_GitPath
-            // 
+            //
             this.textBox_GitPath.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_GitPath.Location = new System.Drawing.Point(7, 126);
             this.textBox_GitPath.Name = "textBox_GitPath";
             this.textBox_GitPath.Size = new System.Drawing.Size(317, 20);
             this.textBox_GitPath.TabIndex = 23;
             this.textBox_GitPath.TextChanged += new System.EventHandler(this.CheckPathes);
-            // 
+            //
             // label23
-            // 
+            //
             this.label23.Location = new System.Drawing.Point(7, 159);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(343, 16);
             this.label23.TabIndex = 22;
             this.label23.Text = "Path to GitExtension.exe or TortoiseGitProc.exe of TortoiseGit:";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
+            //
             // label24
-            // 
+            //
             this.label24.Location = new System.Drawing.Point(7, 110);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(135, 16);
             this.label24.TabIndex = 21;
             this.label24.Text = "Path to git.exe:";
             this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
+            //
             // button_BrowseGit
-            // 
+            //
             this.button_BrowseGit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_BrowseGit.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_BrowseGit.Location = new System.Drawing.Point(327, 126);
@@ -533,9 +536,9 @@ namespace pocorall.SCM_Notifier
             this.button_BrowseGit.TabIndex = 24;
             this.button_BrowseGit.Text = "...";
             this.button_BrowseGit.Click += new System.EventHandler(this.button_BrowseGit_Click);
-            // 
+            //
             // button_BrowseTortoiseGit
-            // 
+            //
             this.button_BrowseTortoiseGit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_BrowseTortoiseGit.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_BrowseTortoiseGit.Location = new System.Drawing.Point(327, 175);
@@ -544,26 +547,26 @@ namespace pocorall.SCM_Notifier
             this.button_BrowseTortoiseGit.TabIndex = 26;
             this.button_BrowseTortoiseGit.Text = "...";
             this.button_BrowseTortoiseGit.Click += new System.EventHandler(this.button_BrowseTortoiseGit_Click);
-            // 
+            //
             // checkBox_ShowInTaskbar
-            // 
+            //
             this.checkBox_ShowInTaskbar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkBox_ShowInTaskbar.Location = new System.Drawing.Point(16, 287);
             this.checkBox_ShowInTaskbar.Name = "checkBox_ShowInTaskbar";
             this.checkBox_ShowInTaskbar.Size = new System.Drawing.Size(144, 16);
             this.checkBox_ShowInTaskbar.TabIndex = 20;
             this.checkBox_ShowInTaskbar.Text = "Show in taskbar";
-            // 
+            //
             // panel1
-            // 
+            //
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Location = new System.Drawing.Point(8, 201);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(344, 0);
             this.panel1.TabIndex = 19;
-            // 
+            //
             // tabPage3
-            // 
+            //
             this.tabPage3.Controls.Add(this.groupBox2);
             this.tabPage3.Controls.Add(this.groupBox1);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
@@ -571,9 +574,9 @@ namespace pocorall.SCM_Notifier
             this.tabPage3.Size = new System.Drawing.Size(544, 377);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Status";
-            // 
+            //
             // groupBox2
-            // 
+            //
             this.groupBox2.Controls.Add(this.checkBox_PauseWindowsResume);
             this.groupBox2.Controls.Add(this.checkBox_PauseApplicationStartup);
             this.groupBox2.Controls.Add(this.label16);
@@ -595,9 +598,9 @@ namespace pocorall.SCM_Notifier
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Pause update after...";
-            // 
+            //
             // checkBox_PauseWindowsResume
-            // 
+            //
             this.checkBox_PauseWindowsResume.AutoSize = true;
             this.checkBox_PauseWindowsResume.Checked = true;
             this.checkBox_PauseWindowsResume.CheckState = System.Windows.Forms.CheckState.Checked;
@@ -607,9 +610,9 @@ namespace pocorall.SCM_Notifier
             this.checkBox_PauseWindowsResume.TabIndex = 6;
             this.checkBox_PauseWindowsResume.Text = "... Windows resume";
             this.checkBox_PauseWindowsResume.UseVisualStyleBackColor = true;
-            // 
+            //
             // checkBox_PauseApplicationStartup
-            // 
+            //
             this.checkBox_PauseApplicationStartup.AutoSize = true;
             this.checkBox_PauseApplicationStartup.Checked = true;
             this.checkBox_PauseApplicationStartup.CheckState = System.Windows.Forms.CheckState.Checked;
@@ -619,9 +622,9 @@ namespace pocorall.SCM_Notifier
             this.checkBox_PauseApplicationStartup.TabIndex = 0;
             this.checkBox_PauseApplicationStartup.Text = "... SCM Notifier startup";
             this.checkBox_PauseApplicationStartup.UseVisualStyleBackColor = true;
-            // 
+            //
             // label16
-            // 
+            //
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.Location = new System.Drawing.Point(236, 32);
             this.label16.Name = "label16";
@@ -629,9 +632,9 @@ namespace pocorall.SCM_Notifier
             this.label16.TabIndex = 2;
             this.label16.Text = ":";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
+            //
             // label17
-            // 
+            //
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.Location = new System.Drawing.Point(236, 56);
             this.label17.Name = "label17";
@@ -639,17 +642,17 @@ namespace pocorall.SCM_Notifier
             this.label17.TabIndex = 8;
             this.label17.Text = ":";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
+            //
             // label18
-            // 
+            //
             this.label18.Location = new System.Drawing.Point(200, 16);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(40, 16);
             this.label18.TabIndex = 17;
             this.label18.Text = "Hours";
-            // 
+            //
             // numericUpDown_PauseWindowsResumeHour
-            // 
+            //
             this.numericUpDown_PauseWindowsResumeHour.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.numericUpDown_PauseWindowsResumeHour.Location = new System.Drawing.Point(197, 56);
             this.numericUpDown_PauseWindowsResumeHour.Maximum = new decimal(new int[] {
@@ -666,9 +669,9 @@ namespace pocorall.SCM_Notifier
             0,
             0,
             0});
-            // 
+            //
             // numericUpDown_PauseApplicationStartupHour
-            // 
+            //
             this.numericUpDown_PauseApplicationStartupHour.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.numericUpDown_PauseApplicationStartupHour.Location = new System.Drawing.Point(197, 32);
             this.numericUpDown_PauseApplicationStartupHour.Maximum = new decimal(new int[] {
@@ -685,9 +688,9 @@ namespace pocorall.SCM_Notifier
             0,
             0,
             0});
-            // 
+            //
             // label19
-            // 
+            //
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.Location = new System.Drawing.Point(285, 56);
             this.label19.Name = "label19";
@@ -695,9 +698,9 @@ namespace pocorall.SCM_Notifier
             this.label19.TabIndex = 9;
             this.label19.Text = ":";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
+            //
             // numericUpDown_PauseWindowsResumeMin
-            // 
+            //
             this.numericUpDown_PauseWindowsResumeMin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.numericUpDown_PauseWindowsResumeMin.Location = new System.Drawing.Point(245, 56);
             this.numericUpDown_PauseWindowsResumeMin.Maximum = new decimal(new int[] {
@@ -714,25 +717,25 @@ namespace pocorall.SCM_Notifier
             0,
             0,
             0});
-            // 
+            //
             // label20
-            // 
+            //
             this.label20.Location = new System.Drawing.Point(288, 16);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(48, 16);
             this.label20.TabIndex = 12;
             this.label20.Text = "Seconds";
-            // 
+            //
             // label21
-            // 
+            //
             this.label21.Location = new System.Drawing.Point(241, 16);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(48, 16);
             this.label21.TabIndex = 11;
             this.label21.Text = "Minutes";
-            // 
+            //
             // numericUpDown_PauseApplicationStartupMin
-            // 
+            //
             this.numericUpDown_PauseApplicationStartupMin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.numericUpDown_PauseApplicationStartupMin.Location = new System.Drawing.Point(245, 32);
             this.numericUpDown_PauseApplicationStartupMin.Maximum = new decimal(new int[] {
@@ -749,9 +752,9 @@ namespace pocorall.SCM_Notifier
             0,
             0,
             0});
-            // 
+            //
             // label22
-            // 
+            //
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.Location = new System.Drawing.Point(285, 32);
             this.label22.Name = "label22";
@@ -759,9 +762,9 @@ namespace pocorall.SCM_Notifier
             this.label22.TabIndex = 4;
             this.label22.Text = ":";
             this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
+            //
             // numericUpDown_PauseWindowsResumeSec
-            // 
+            //
             this.numericUpDown_PauseWindowsResumeSec.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.numericUpDown_PauseWindowsResumeSec.Location = new System.Drawing.Point(293, 56);
             this.numericUpDown_PauseWindowsResumeSec.Maximum = new decimal(new int[] {
@@ -778,9 +781,9 @@ namespace pocorall.SCM_Notifier
             0,
             0,
             0});
-            // 
+            //
             // numericUpDown_PauseApplicationStartupSec
-            // 
+            //
             this.numericUpDown_PauseApplicationStartupSec.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.numericUpDown_PauseApplicationStartupSec.Location = new System.Drawing.Point(293, 32);
             this.numericUpDown_PauseApplicationStartupSec.Maximum = new decimal(new int[] {
@@ -797,9 +800,9 @@ namespace pocorall.SCM_Notifier
             0,
             0,
             0});
-            // 
+            //
             // groupBox1
-            // 
+            //
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.label11);
@@ -821,9 +824,9 @@ namespace pocorall.SCM_Notifier
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Default status checking interval when...";
-            // 
+            //
             // label13
-            // 
+            //
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(236, 32);
             this.label13.Name = "label13";
@@ -831,9 +834,9 @@ namespace pocorall.SCM_Notifier
             this.label13.TabIndex = 2;
             this.label13.Text = ":";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
+            //
             // label12
-            // 
+            //
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(236, 56);
             this.label12.Name = "label12";
@@ -841,17 +844,17 @@ namespace pocorall.SCM_Notifier
             this.label12.TabIndex = 8;
             this.label12.Text = ":";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
+            //
             // label11
-            // 
+            //
             this.label11.Location = new System.Drawing.Point(200, 16);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(40, 16);
             this.label11.TabIndex = 17;
             this.label11.Text = "Hours";
-            // 
+            //
             // numericUpDown_DefaultIdleStatusUpdateIntervalHour
-            // 
+            //
             this.numericUpDown_DefaultIdleStatusUpdateIntervalHour.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.numericUpDown_DefaultIdleStatusUpdateIntervalHour.Location = new System.Drawing.Point(197, 56);
             this.numericUpDown_DefaultIdleStatusUpdateIntervalHour.Maximum = new decimal(new int[] {
@@ -868,9 +871,9 @@ namespace pocorall.SCM_Notifier
             0,
             0,
             0});
-            // 
+            //
             // numericUpDown_DefaultActiveStatusUpdateIntervalHour
-            // 
+            //
             this.numericUpDown_DefaultActiveStatusUpdateIntervalHour.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.numericUpDown_DefaultActiveStatusUpdateIntervalHour.Location = new System.Drawing.Point(197, 32);
             this.numericUpDown_DefaultActiveStatusUpdateIntervalHour.Maximum = new decimal(new int[] {
@@ -887,9 +890,9 @@ namespace pocorall.SCM_Notifier
             0,
             0,
             0});
-            // 
+            //
             // label9
-            // 
+            //
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(285, 56);
             this.label9.Name = "label9";
@@ -897,9 +900,9 @@ namespace pocorall.SCM_Notifier
             this.label9.TabIndex = 9;
             this.label9.Text = ":";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
+            //
             // numericUpDown_DefaultIdleStatusUpdateIntervalMin
-            // 
+            //
             this.numericUpDown_DefaultIdleStatusUpdateIntervalMin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.numericUpDown_DefaultIdleStatusUpdateIntervalMin.Location = new System.Drawing.Point(245, 56);
             this.numericUpDown_DefaultIdleStatusUpdateIntervalMin.Maximum = new decimal(new int[] {
@@ -916,25 +919,25 @@ namespace pocorall.SCM_Notifier
             0,
             0,
             0});
-            // 
+            //
             // label8
-            // 
+            //
             this.label8.Location = new System.Drawing.Point(288, 16);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(48, 16);
             this.label8.TabIndex = 12;
             this.label8.Text = "Seconds";
-            // 
+            //
             // label5
-            // 
+            //
             this.label5.Location = new System.Drawing.Point(241, 16);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(48, 16);
             this.label5.TabIndex = 11;
             this.label5.Text = "Minutes";
-            // 
+            //
             // numericUpDown_DefaultActiveStatusUpdateIntervalMin
-            // 
+            //
             this.numericUpDown_DefaultActiveStatusUpdateIntervalMin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.numericUpDown_DefaultActiveStatusUpdateIntervalMin.Location = new System.Drawing.Point(245, 32);
             this.numericUpDown_DefaultActiveStatusUpdateIntervalMin.Maximum = new decimal(new int[] {
@@ -951,9 +954,9 @@ namespace pocorall.SCM_Notifier
             0,
             0,
             0});
-            // 
+            //
             // label6
-            // 
+            //
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(285, 32);
             this.label6.Name = "label6";
@@ -961,18 +964,18 @@ namespace pocorall.SCM_Notifier
             this.label6.TabIndex = 4;
             this.label6.Text = ":";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
+            //
             // label3
-            // 
+            //
             this.label3.Location = new System.Drawing.Point(24, 32);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(168, 16);
             this.label3.TabIndex = 0;
             this.label3.Text = "... form is active:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
+            //
             // numericUpDown_DefaultIdleStatusUpdateIntervalSec
-            // 
+            //
             this.numericUpDown_DefaultIdleStatusUpdateIntervalSec.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.numericUpDown_DefaultIdleStatusUpdateIntervalSec.Location = new System.Drawing.Point(293, 56);
             this.numericUpDown_DefaultIdleStatusUpdateIntervalSec.Maximum = new decimal(new int[] {
@@ -989,18 +992,18 @@ namespace pocorall.SCM_Notifier
             0,
             0,
             0});
-            // 
+            //
             // label4
-            // 
+            //
             this.label4.Location = new System.Drawing.Point(8, 56);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(184, 16);
             this.label4.TabIndex = 6;
             this.label4.Text = "... form is not active:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
+            //
             // numericUpDown_DefaultActiveStatusUpdateIntervalSec
-            // 
+            //
             this.numericUpDown_DefaultActiveStatusUpdateIntervalSec.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.numericUpDown_DefaultActiveStatusUpdateIntervalSec.Location = new System.Drawing.Point(293, 32);
             this.numericUpDown_DefaultActiveStatusUpdateIntervalSec.Maximum = new decimal(new int[] {
@@ -1017,9 +1020,9 @@ namespace pocorall.SCM_Notifier
             0,
             0,
             0});
-            // 
+            //
             // tabPage2
-            // 
+            //
             this.tabPage2.Controls.Add(this.label15);
             this.tabPage2.Controls.Add(this.checkBox_ChangeLogBeforeUpdate);
             this.tabPage2.Controls.Add(this.checkBox_UpdateAllSilently);
@@ -1030,18 +1033,29 @@ namespace pocorall.SCM_Notifier
             this.tabPage2.Size = new System.Drawing.Size(544, 377);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Update";
-            // 
+            //
             // label15
-            // 
+            //
             this.label15.ForeColor = System.Drawing.SystemColors.GrayText;
             this.label15.Location = new System.Drawing.Point(48, 88);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(208, 16);
             this.label15.TabIndex = 28;
             this.label15.Text = "(Requires TortoiseSVN v1.5 or higher)";
-            // 
+            //
+            // checkBox_DoRealFetch
+            //
+            this.checkBox_DoRealFetch.AutoSize = true;
+            this.checkBox_DoRealFetch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.checkBox_DoRealFetch.Location = new System.Drawing.Point(16, 331);
+            this.checkBox_DoRealFetch.Name = "checkBox_DoRealFetch";
+            this.checkBox_DoRealFetch.Size = new System.Drawing.Size(84, 17);
+            this.checkBox_DoRealFetch.TabIndex = 27;
+            this.checkBox_DoRealFetch.Text = "Do real fetch";
+            this.checkBox_DoRealFetch.UseVisualStyleBackColor = true;
+            //
             // SettingsForm
-            // 
+            //
             this.AcceptButton = this.button_OK;
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.CancelButton = this.button_Cancel;
@@ -1084,14 +1098,14 @@ namespace pocorall.SCM_Notifier
 
 		#endregion
 
-		
+
 		private void SettingsForm_Load(object sender, System.EventArgs e)
 		{
 			textBox_SVNpath.Text = Config.SvnPath;
 			textBox_TortoiseSVNpath.Text = Config.TortoiseSvnPath;
             textBox_GitPath.Text = Config.GitPath;
             textBox_TortoiseGitPath.Text = Config.GitUIPath;
-			
+
 			numericUpDown_DefaultActiveStatusUpdateIntervalHour.Value = Config.DefaultActiveStatusUpdateInterval / 3600;
 			numericUpDown_DefaultActiveStatusUpdateIntervalMin.Value = (Config.DefaultActiveStatusUpdateInterval % 3600) / 60;
 			numericUpDown_DefaultActiveStatusUpdateIntervalSec.Value = Config.DefaultActiveStatusUpdateInterval % 60;
@@ -1128,6 +1142,7 @@ namespace pocorall.SCM_Notifier
 			checkBox_CheckForNewVersion.Checked = Config.CheckForNewVersion;
 			checkBox_UpdateAllSilently.Checked = Config.UpdateAllSilently;
 			comboBox_UpdateWindowAction.SelectedIndex = Config.UpdateWindowAction;
+      checkBox_DoRealFetch.Checked = Config.DoRealFetch;
 		}
 
 
@@ -1138,12 +1153,12 @@ namespace pocorall.SCM_Notifier
             Config.GitPath = textBox_GitPath.Text;
             Config.GitUIPath = textBox_TortoiseGitPath.Text;
 
-			Config.DefaultActiveStatusUpdateInterval = 
+			Config.DefaultActiveStatusUpdateInterval =
 				(int)numericUpDown_DefaultActiveStatusUpdateIntervalHour.Value * 3600
-				+ (int)numericUpDown_DefaultActiveStatusUpdateIntervalMin.Value * 60 
+				+ (int)numericUpDown_DefaultActiveStatusUpdateIntervalMin.Value * 60
 				+ (int)numericUpDown_DefaultActiveStatusUpdateIntervalSec.Value;
 
-			Config.DefaultIdleStatusUpdateInterval = 
+			Config.DefaultIdleStatusUpdateInterval =
 				(int)numericUpDown_DefaultIdleStatusUpdateIntervalHour.Value * 3600
 				+ (int)numericUpDown_DefaultIdleStatusUpdateIntervalMin.Value * 60
 				+ (int)numericUpDown_DefaultIdleStatusUpdateIntervalSec.Value;
@@ -1168,6 +1183,7 @@ namespace pocorall.SCM_Notifier
 			Config.CheckForNewVersion = checkBox_CheckForNewVersion.Checked;
 			Config.UpdateAllSilently = checkBox_UpdateAllSilently.Checked;
 			Config.UpdateWindowAction = comboBox_UpdateWindowAction.SelectedIndex;
+            Config.DoRealFetch = checkBox_DoRealFetch.Checked;
 
 			Config.SaveSettings();
 			Close();
@@ -1191,7 +1207,7 @@ namespace pocorall.SCM_Notifier
                 CheckPathes(sender, e);
             }
         }
-		
+
 		private void button_BrowseTortoise_Click(object sender, System.EventArgs e)
 		{
 			if (openFileDialog_Tortoise.ShowDialog (this) == DialogResult.OK)
@@ -1221,7 +1237,7 @@ namespace pocorall.SCM_Notifier
 //				button_OK.Enabled = false;
 
 			}
-				
+
 			if (!File.Exists (textBox_TortoiseSVNpath.Text))
 			{
 				textBox_TortoiseSVNpath.BackColor = Color.Yellow;

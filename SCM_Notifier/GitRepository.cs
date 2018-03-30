@@ -152,7 +152,13 @@ namespace pocorall.SCM_Notifier
 
             try
             {
-                ExecuteResult er = ExecuteProcess(Config.GitPath, path,"fetch --all --dry-run -v", true, true);
+                if (Config.DoRealFetch)  {
+                    ExecuteResult er = ExecuteProcess(Config.GitPath, path,"fetch --all -v", true, true);
+                }
+                else { 
+                    ExecuteResult er = ExecuteProcess(Config.GitPath, path,"fetch --all --dry-run -v", true, true);
+                }
+
                 if (er.processError.Contains("Could not fetch"))
                 {
                     return ScmRepositoryStatus.Error;

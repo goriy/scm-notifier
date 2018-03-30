@@ -44,7 +44,7 @@ namespace pocorall.SCM_Notifier
         public static string GitPath;
         public static string GitUIPath;
 
-		
+
 		/// <summary>
 		/// Status check interval (in seconds) when MainForm is activated.
 		/// </summary>
@@ -96,8 +96,8 @@ namespace pocorall.SCM_Notifier
 			checkNow = 4,
 			fetchAction = 5
 		}
-		
-		
+
+
 		public static Action ItemDoubleClickAction;
 
 		/// <summary>
@@ -106,7 +106,7 @@ namespace pocorall.SCM_Notifier
 		public static bool HideOnStartup;
 		public static bool ShowInTaskbar;
 		public static bool CheckForNewVersion;
-
+		public static bool DoRealFetch;
 
 		/// <summary>
 		/// Force to see Change Log before Update
@@ -161,6 +161,7 @@ namespace pocorall.SCM_Notifier
 			CheckForNewVersion = iniFile.ReadBoolean ("Settings", "CheckForNewVersion", true);
 			UpdateAllSilently = iniFile.ReadBoolean ("Settings", "UpdateAllSilently", true);
 			UpdateWindowAction = iniFile.ReadInteger ("Settings", "UpdateWindowAction", 2);
+			DoRealFetch = iniFile.ReadBoolean("Settings", "DoRealFetch", false);
 
 			ChangeLogBeforeUpdate = IsTortoiseVersion_1_5_orHigher() && iniFile.ReadBoolean ("Settings", "ChangeLogBeforeUpdate", false);
 		}
@@ -195,6 +196,7 @@ namespace pocorall.SCM_Notifier
 			iniFile.Write ("Settings", "ChangeLogBeforeUpdate", ChangeLogBeforeUpdate);
 			iniFile.Write ("Settings", "UpdateAllSilently", UpdateAllSilently);
 			iniFile.Write ("Settings", "UpdateWindowAction", UpdateWindowAction);
+			iniFile.Write ("Settings", "DoRealFetch", DoRealFetch);
 		}
 
 
@@ -222,11 +224,11 @@ namespace pocorall.SCM_Notifier
 						s += ",-1,-1";
 
 					//	For SCM_Notifier versions < 1.3.0
-					if (p.Length <= 3)		
+					if (p.Length <= 3)
 						s += ",False";
 
 					//	For SCM_Notifier versions < 1.5.0
-					if (p.Length <= 4)													
+					if (p.Length <= 4)
 						s += "," + (File.Exists (p[0]) ? (int) ScmRepository.PathType.File : (int) ScmRepository.PathType.Directory);
 
 					iniFile.Write ("Folders", "Folder" + i, s);
@@ -359,7 +361,7 @@ namespace pocorall.SCM_Notifier
 		internal static string logFileName;
 
 		#region Private fields
-		
+
 
 		private static IniFile iniFile;
 
